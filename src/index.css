@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
+:root {
+  --bg-color: rgba(255, 255, 255, 1);
+  --text-dark: #000000;
+  --text-light: #ffffff;
+  --accent-red: #e63946;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  position: relative;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Main container */
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Logo section */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 22vh;
+  z-index: 10;
+}
+
+.logo-image {
+  width: 220px;
+  height: auto;
+}
+
+.tagline-image {
+  width: 280px;
+  height: auto;
+  margin-top: 5px;
+}
+
+/* Time location display */
+.time-location {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  line-height: 100%;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Helicopter section */
+.helicopter-section {
+  position: absolute;
+  top: -10px;
+  right: 30%;
+  z-index: 20;
+}
+
+.helicopter-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.helicopter-image {
+  width: 300px;
+  height: auto;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: var(--text-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 15px solid var(--text-light);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 4px;
+}
+
+/* Helicopter shake animation */
+/* Helicopter jitter animation */
+@keyframes jitter {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.helicopter-shake {
+  animation: jitter 0.2s infinite linear;
+}
+
+/* Dropping items */
+.dropping-items-container {
+  position: absolute;
+  top: 130px;
+  right: 30%;
+  width: 400px;
+  height: 120vh;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.dropping-item {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+}
+
+.item-sandwich {
+  width: 150px;
+}
+
+.item-watergun {
+  width: 120px;
+  /* Original x was 195 vs 230 for others (center). 195 is -35px shift from 230.
+     If 230 is center (50%), then 195 is just left of center.
+     Since container is 400px wide, center is 200px.
+     Original "230" means 230px from left.
+     Center is 200px. So 230px is +30px offset?
+     Wait. 230px in 400px container is (230/400) = 57.5%.
+     195px in 400px container is (195/400) = 48.75% (approx center).
+
+     Let's stick to centering all for simplicity first, or add margin.
+     The user's original code had different 'x' values.
+     Sandwich/Bucket: 230px. Watergun: 195px.
+     Use margin-left to offset.
+  */
+  margin-left: -35px;
+  /* Offset relative to others if needed */
+}
+
+.item-bucket {
+  width: 90px;
+}
+
+/* Globe section */
+.globe-section {
+  margin-top: auto;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.globe-wrapper {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.globe-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.globe-image {
+  width: 95px;
+  height: auto;
+}
+
+.library-label {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: auto;
+}
+
+/* Static items on desktop */
+.static-items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.static-item {
+  position: absolute;
+}
+
+.bucket-static {
+  top: 150px;
+  right: 5%;
+  width: 100px;
+}
+
+.watergun-static {
+  top: 280px;
+  right: 2%;
+  width: 120px;
+}
+
+.sandwich-static {
+  bottom: 200px;
+  right: 8%;
+  width: 100px;
+}
+
+/* Social footer */
+.social-footer {
+  position: fixed;
+  bottom: 0;
+  background: var(--text-dark);
+  z-index: 100;
+  width: auto;
+  min-width: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  opacity: 0.7;
+}
+
+/* Landscape blocker */
+.landscape-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-color);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  text-align: center;
+  padding: 20px;
+}
+
+.landscape-blocker h1 {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.landscape-blocker h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: 3px;
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+  .landscape-blocker {
+    display: flex;
+  }
+
+  .main-container {
+    display: none;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 15px;
+    padding-bottom: 80px;
+  }
+
+  .logo-section {
+    margin-top: 120px;
+  }
+
+  .logo-image {
+    width: 270px;
+  }
+
+  .tagline-image {
+    width: 390px;
+    margin-top: -2px;
+  }
+
+  .social-footer {
+    bottom: 70px;
+  }
+
+  .helicopter-section {
+    top: 5px;
+    right: -20px;
+  }
+
+  .helicopter-image {
+    width: 300px;
+  }
+
+  .play-button {
+    width: 70px;
+    height: 70px;
+  }
+
+  .play-button::after {
+    border-left-width: 20px;
+    border-top-width: 14px;
+    border-bottom-width: 14px;
+  }
+
+  .dropping-items-container {
+    top: 120px;
+    right: -30px;
+    width: 320px;
+    height: 350px;
+  }
+
+  .dropping-item {
+    /* Mobile specific overrides if any, but width is handled by specific classes now */
+  }
+
+  .item-sandwich {
+    width: 135px;
+  }
+
+  .item-watergun {
+    width: 120px;
+    margin-left: -30px;
+    /* Half of desktop offset */
+  }
+
+  .item-bucket {
+    width: 100px;
+  }
+
+  .bucket-static {
+    top: 120px;
+    right: -10px;
+    width: 90px;
+  }
+
+  .watergun-static {
+    top: 320px;
+    right: -5%;
+    width: 120px;
+  }
+
+  .sandwich-static {
+    bottom: 280px;
+    right: 0;
+    width: 100px;
+  }
+
+  .globe-section {
+    margin-bottom: 100px;
+  }
+
+  .globe-image {
+    width: 140px;
+  }
+
+  .library-label {
+    width: 110px;
+  }
+
+  .time-location {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    margin-top: -2px;
+  }
+}
+
+/* Copyright symbol */
+.copyright {
+  position: fixed;
+  bottom: 100px;
+  /* Moved up to stay above social footer */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: var(--text-dark);
+  z-index: 50;
+}
