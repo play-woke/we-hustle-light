@@ -2,18 +2,20 @@ import { motion } from 'framer-motion';
 import bucketImg from '../assets/images/bucket.png';
 import watergunImg from '../assets/images/watergun.png';
 import sandwichImg from '../assets/images/sandwich.png';
+import skiMaskImg from '../assets/images/ski-mask.png';
 
 const DroppingItems = () => {
     const items = [
         { id: 'sandwich-1', src: sandwichImg, delay: 0, type: 'sandwich' },
-        { id: 'watergun-1', src: watergunImg, delay: 0.6, type: 'watergun' },
-        { id: 'bucket-1', src: bucketImg, delay: 1.2, type: 'bucket' },
-        { id: 'sandwich-2', src: sandwichImg, delay: 1.8, type: 'sandwich' },
-        { id: 'watergun-2', src: watergunImg, delay: 2.4, type: 'watergun' },
+        { id: 'watergun-1', src: watergunImg, delay: 0.5, type: 'watergun' },
+        { id: 'bucket-1', src: bucketImg, delay: 1.0, type: 'bucket' },
+        { id: 'skimask-1', src: skiMaskImg, delay: 1.5, type: 'skimask' },
+        { id: 'sandwich-2', src: sandwichImg, delay: 2.0, type: 'sandwich' },
+        { id: 'watergun-2', src: watergunImg, delay: 2.5, type: 'watergun' },
         { id: 'bucket-2', src: bucketImg, delay: 3.0, type: 'bucket' },
-        { id: 'sandwich-3', src: sandwichImg, delay: 3.6, type: 'sandwich' },
-        { id: 'watergun-3', src: watergunImg, delay: 4.2, type: 'watergun' },
-        { id: 'bucket-3', src: bucketImg, delay: 4.8, type: 'bucket' },
+        { id: 'skimask-2', src: skiMaskImg, delay: 3.5, type: 'skimask' },
+        { id: 'sandwich-3', src: sandwichImg, delay: 4.0, type: 'sandwich' },
+        { id: 'watergun-3', src: watergunImg, delay: 4.5, type: 'watergun' },
     ];
 
     const dropAnimation = {

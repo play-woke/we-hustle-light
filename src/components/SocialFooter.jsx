@@ -4,9 +4,9 @@ import youtubeIcon from '../assets/images/youtube.png';
 
 const SocialFooter = () => {
     const socialLinks = [
-        { id: 'tiktok', icon: tiktokIcon, url: '#', alt: 'TikTok' },
-        { id: 'instagram', icon: instagramIcon, url: '#', alt: 'Instagram' },
-        { id: 'youtube', icon: youtubeIcon, url: '#', alt: 'YouTube' },
+        { id: 'tiktok', icon: tiktokIcon, url: 'https://tiktok.com/@play_woke', alt: 'TikTok' },
+        { id: 'instagram', icon: instagramIcon, url: 'https://instagram.com/play_woke', alt: 'Instagram' },
+        { id: 'youtube', icon: youtubeIcon, url: 'https://youtube.com/@play-woke', alt: 'YouTube' },
     ];
 
     return (
