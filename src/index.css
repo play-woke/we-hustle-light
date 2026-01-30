@@ -66,8 +66,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 22vh;
-  z-index: 10;
+  margin-top: 15vh;
+  z-index: 20;
 }
 
 .logo-image {
@@ -94,12 +94,12 @@ body {
   text-align: center;
 }
 
-/* Helicopter section */
+/* Helicopter section - behind logo */
 .helicopter-section {
   position: absolute;
-  top: -10px;
-  right: 30%;
-  z-index: 20;
+  top: 2vh;
+  right: 20%;
+  z-index: 5;
 }
 
 .helicopter-wrapper {
@@ -108,33 +108,11 @@ body {
 }
 
 .helicopter-image {
-  width: 300px;
+  width: 280px;
   height: auto;
 }
 
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 38px;
-  height: 38px;
-  background: var(--text-dark);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.play-button::after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 12px solid var(--text-light);
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  margin-left: 3px;
-}
+/* Play button removed from helicopter - now on record in footer */
 
 /* Helicopter shake animation */
 /* Helicopter jitter animation */
@@ -188,15 +166,15 @@ body {
   animation: jitter 0.2s infinite linear;
 }
 
-/* Dropping items */
+/* Dropping items - above globe */
 .dropping-items-container {
   position: absolute;
   top: 130px;
-  right: 30%;
-  width: 400px;
+  right: 28%;
+  width: 300px;
   height: 120vh;
   pointer-events: none;
-  z-index: 15;
+  z-index: 30;
 }
 
 .dropping-item {
@@ -239,13 +217,13 @@ body {
 
 /* Globe section */
 .globe-section {
-  margin-top: auto;
-  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  z-index: 10;
+  z-index: 15;
 }
 
 .globe-wrapper {
@@ -259,7 +237,7 @@ body {
 }
 
 .globe-image {
-  width: 95px;
+  width: 320px;
   height: auto;
 }
 
@@ -268,7 +246,7 @@ body {
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 75px;
+  width: 200px;
   height: auto;
 }
 
@@ -305,32 +283,84 @@ body {
   width: 100px;
 }
 
-/* Social footer */
-.social-footer {
+/* Footer container */
+.footer-container {
   position: fixed;
   bottom: 0;
-  background: var(--text-dark);
+  left: 0;
+  right: 0;
   z-index: 100;
-  width: auto;
-  min-width: auto;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 20px;
-  padding: 0;
+  padding: 15px 25px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* Social bar */
+.social-bar {
+  display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 20px;
+  background: var(--text-dark);
+  padding: 8px 0;
 }
 
 .social-icon {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   transition: opacity 0.3s ease;
 }
 
 .social-icon:hover {
   opacity: 0.7;
+}
+
+/* Record player button */
+.record-player {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.record-player:hover {
+  transform: scale(1.05);
+}
+
+.record-image {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.record-image.spinning {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.play-triangle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 16px solid var(--text-light);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  pointer-events: none;
+}
+
+.play-triangle.hidden {
+  display: none;
 }
 
 /* Landscape blocker */
@@ -379,92 +409,80 @@ body {
 @media (max-width: 768px) {
   .main-container {
     padding: 15px;
-    padding-bottom: 80px;
+    padding-bottom: 100px;
   }
 
   .logo-section {
-    margin-top: 120px;
+    margin-top: 100px;
   }
 
   .logo-image {
-    width: 270px;
+    width: 220px;
   }
 
   .tagline-image {
-    width: 390px;
+    width: 320px;
     margin-top: -2px;
   }
 
-  .social-footer {
-    bottom: 70px;
+  .footer-container {
+    padding: 10px 15px;
+  }
+
+  .social-bar {
+    gap: 15px;
+  }
+
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .record-image {
+    width: 60px;
+  }
+
+  .play-triangle {
+    border-left-width: 12px;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
   }
 
   .helicopter-section {
-    top: 5px;
-    right: -20px;
+    top: 0;
+    right: -15%;
   }
 
   .helicopter-image {
-    width: 300px;
-  }
-
-  .play-button {
-    width: 57px;
-    height: 57px;
-  }
-
-  .play-button::after {
-    border-left-width: 16px;
-    border-top-width: 11px;
-    border-bottom-width: 11px;
+    width: 250px;
   }
 
   .dropping-items-container {
-    top: 120px;
-    right: -30px;
-    width: 320px;
+    top: 100px;
+    right: -20%;
+    width: 280px;
     height: 350px;
   }
 
-
   .item-sandwich {
-    width: 135px;
+    width: 120px;
   }
 
   .item-watergun {
-    width: 120px;
+    width: 100px;
     margin-left: -30px;
-    /* Half of desktop offset */
   }
 
   .item-bucket {
-    width: 100px;
+    width: 80px;
   }
 
   .item-skimask {
-    width: 105px;
-  }
-
-  .bucket-static {
-    top: 120px;
-    right: -10px;
     width: 90px;
   }
 
-  .watergun-static {
-    top: 320px;
-    right: -5%;
-    width: 120px;
-  }
-
-  .sandwich-static {
-    bottom: 280px;
-    right: 0;
-    width: 100px;
-  }
-
   .globe-section {
-    margin-bottom: 100px;
+    margin-bottom: 110px;
   }
 
   .globe-image {
@@ -472,12 +490,12 @@ body {
   }
 
   .library-label {
-    width: 110px;
+    width: 100px;
   }
 
   .time-location {
-    font-size: 11px;
-    letter-spacing: 0.12em;
+    font-size: 10px;
+    letter-spacing: 0.1em;
     margin-top: -2px;
   }
 }

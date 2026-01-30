@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import bucketImg from '../assets/images/bucket.png';
-import watergunImg from '../assets/images/watergun.png';
-import sandwichImg from '../assets/images/sandwich.png';
-import skiMaskImg from '../assets/images/ski-mask.png';
+import bucketImg from '../assets/images/bucket.webp';
+import watergunImg from '../assets/images/watergun.webp';
+import sandwichImg from '../assets/images/sandwich.webp';
+import skiMaskImg from '../assets/images/ski-mask.webp';
 
 const DroppingItems = () => {
     const items = [
@@ -22,12 +22,14 @@ const DroppingItems = () => {
         initial: {
             y: -100,
             opacity: 0,
-            rotate: 0
+            rotate: 0,
+            visibility: 'hidden'
         },
         animate: (customDelay) => ({
-            y: [-100, 200, 400, 600, 800, 1000],
-            opacity: [1, 1, 1, 1, 1, 1],
-            rotate: [0, 90, 180, 270, 360],
+            y: [-100, -50, 200, 400, 600, 800, 1000],
+            opacity: [0, 1, 1, 1, 1, 1, 0],
+            rotate: [0, 0, 90, 180, 270, 360, 360],
+            visibility: 'visible',
             transition: {
                 duration: 5.4,
                 ease: "linear",
