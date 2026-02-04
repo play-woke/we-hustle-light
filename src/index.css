@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
 
 :root {
   --bg-color: rgba(255, 255, 255, 1);
@@ -61,45 +61,53 @@ body {
   -webkit-overflow-scrolling: auto;
 }
 
-/* Logo section */
+/* Logo section - fixed at top */
 .logo-section {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 15vh;
   z-index: 20;
 }
 
 .logo-image {
-  width: 220px;
+  width: 280px;
   height: auto;
 }
 
 .tagline-image {
-  width: 280px;
+  width: 400px;
   height: auto;
   margin-top: 5px;
+  position: relative;
+  z-index: 20;
 }
 
 /* Time location display */
 .time-location {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 9px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--text-dark);
   text-transform: uppercase;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.13em;
   line-height: 100%;
   margin-top: 5px;
   text-align: center;
+  width: 400px;
+  position: relative;
+  z-index: 20;
 }
 
 /* Helicopter section - behind logo */
 .helicopter-section {
   position: absolute;
-  top: 2vh;
-  right: 20%;
-  z-index: 5;
+  top: calc(5vh + 120px);
+  right: calc(25% + 75px);
+  z-index: 15;
 }
 
 .helicopter-wrapper {
@@ -108,7 +116,7 @@ body {
 }
 
 .helicopter-image {
-  width: 280px;
+  width: 300px;
   height: auto;
 }
 
@@ -166,15 +174,15 @@ body {
   animation: jitter 0.2s infinite linear;
 }
 
-/* Dropping items - above globe */
+/* Dropping items - behind logo */
 .dropping-items-container {
   position: absolute;
-  top: 130px;
-  right: 28%;
-  width: 300px;
+  top: calc(5vh + 220px);
+  right: calc(25% + 75px);
+  width: 400px;
   height: 120vh;
   pointer-events: none;
-  z-index: 30;
+  z-index: 10;
 }
 
 .dropping-item {
@@ -185,11 +193,11 @@ body {
 }
 
 .item-sandwich {
-  width: 150px;
+  width: 148px;
 }
 
 .item-watergun {
-  width: 120px;
+  width: 118px;
   /* Original x was 195 vs 230 for others (center). 195 is -35px shift from 230.
      If 230 is center (50%), then 195 is just left of center.
      Since container is 400px wide, center is 200px.
@@ -208,22 +216,23 @@ body {
 }
 
 .item-bucket {
-  width: 90px;
+  width: 88px;
 }
 
 .item-skimask {
-  width: 110px;
+  width: 107px;
 }
 
 /* Globe section */
 .globe-section {
-  margin-top: 20px;
+  margin-top: auto;
   margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  z-index: 15;
+  z-index: 5;
+  transform: translateY(35px);
 }
 
 .globe-wrapper {
@@ -237,7 +246,7 @@ body {
 }
 
 .globe-image {
-  width: 320px;
+  width: 220px;
   height: auto;
 }
 
@@ -246,7 +255,7 @@ body {
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
+  width: 160px;
   height: auto;
 }
 
@@ -302,7 +311,7 @@ body {
   align-items: center;
   gap: 20px;
   background: var(--text-dark);
-  padding: 8px 0;
+  padding: 1px 0;
 }
 
 .social-icon {
@@ -413,15 +422,15 @@ body {
   }
 
   .logo-section {
-    margin-top: 100px;
+    top: 15px;
   }
 
   .logo-image {
-    width: 220px;
+    width: 240px;
   }
 
   .tagline-image {
-    width: 320px;
+    width: 340px;
     margin-top: -2px;
   }
 
