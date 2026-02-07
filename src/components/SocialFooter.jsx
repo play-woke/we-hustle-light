@@ -15,15 +15,18 @@ const SocialFooter = () => {
         { id: 'youtube', icon: youtubeIcon, url: 'https://youtube.com/@play-woke', alt: 'YouTube' },
     ];
 
-    const toggleAudio = () => {
+    const startAudio = () => {
         if (audioRef.current) {
-            if (isPlaying) {
-                audioRef.current.pause();
-            } else {
-                audioRef.current.currentTime = 0;
-                audioRef.current.play().catch(e => console.log('Audio play failed:', e));
-            }
-            setIsPlaying(!isPlaying);
+            audioRef.current.currentTime = 0;
+            audioRef.current.play().catch(e => console.log('Audio play failed:', e));
+            setIsPlaying(true);
+        }
+    };
+
+    const stopAudio = () => {
+        if (audioRef.current) {
+            audioRef.current.pause();
+            setIsPlaying(false);
         }
     };
 
@@ -49,13 +52,12 @@ const SocialFooter = () => {
             </div>
 
             {/* Record player button on the right */}
-            <div className="record-player" onClick={toggleAudio}>
+            <div className="record-player" onMouseEnter={startAudio} onMouseLeave={stopAudio}>
                 <img
                     src={recordImg}
                     alt="Listen"
                     className={`record-image ${isPlaying ? 'spinning' : ''}`}
                 />
-                <div className={`play-triangle ${isPlaying ? 'hidden' : ''}`}></div>
             </div>
 
             <audio ref={audioRef} src={helicopterSound} loop />
@@ -64,3 +66,4 @@ const SocialFooter = () => {
 };
 
 export default SocialFooter;
+
