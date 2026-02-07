@@ -76,11 +76,17 @@ body {
 .logo-image {
   width: 280px;
   height: auto;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
 }
 
 .tagline-image {
   width: 400px;
   height: auto;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
   margin-top: 5px;
   position: relative;
   z-index: 20;
@@ -118,6 +124,9 @@ body {
 .helicopter-image {
   width: 300px;
   height: auto;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
 }
 
 /* Play button removed from helicopter - now on record in footer */
@@ -190,6 +199,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   height: auto;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
 }
 
 .item-sandwich {
@@ -239,6 +251,9 @@ body {
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .globe-wrapper:hover {
@@ -248,6 +263,9 @@ body {
 .globe-image {
   width: 220px;
   height: auto;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
 }
 
 .library-label {
@@ -257,6 +275,9 @@ body {
   transform: translate(-50%, -50%);
   width: 160px;
   height: auto;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
 }
 
 /* Static items on desktop */
@@ -320,6 +341,9 @@ body {
 .social-icon {
   width: 29px;
   height: 29px;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
   transition: opacity 0.3s ease;
 }
 
@@ -341,6 +365,9 @@ body {
 .record-image {
   width: 131px;
   height: 135px;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
   transition: transform 0.3s ease;
 }
 
@@ -407,7 +434,18 @@ body {
   letter-spacing: 3px;
 }
 
-@media (orientation: landscape) and (max-width: 1024px) {
+@media (orientation: landscape) and (max-width: 1400px) {
+  .landscape-blocker {
+    display: flex;
+  }
+
+  .main-container {
+    display: none;
+  }
+}
+
+/* Additional check for touch devices in landscape (covers all tablets) */
+@media (orientation: landscape) and (hover: none) and (pointer: coarse) {
   .landscape-blocker {
     display: flex;
   }
