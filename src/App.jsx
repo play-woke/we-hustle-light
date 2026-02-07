@@ -12,7 +12,7 @@ import taglineImg from './assets/images/tagline.webp';
 
 function App() {
   const handleLogoClick = () => {
-    window.open('https://play-woke.com', '_blank');
+    window.open('https://play-woke-sooty.vercel.app', '_blank');
   };
 
   return (
