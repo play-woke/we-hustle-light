@@ -180,7 +180,7 @@ body {
 }
 
 .helicopter-shake {
-  animation: jitter 0.2s infinite linear;
+  animation: jitter 0.5s infinite linear;
 }
 
 /* Dropping items - behind logo */
@@ -463,16 +463,16 @@ body {
   }
 
   .logo-section {
-    top: 88px;
+    top: 61px;
   }
 
   .logo-image {
-    width: 240px;
+    width: 257px;
   }
 
   .tagline-image {
-    width: 340px;
-    margin-top: -2px;
+    width: 347px;
+    margin-top: -10px;
   }
 
   .footer-container {
@@ -480,16 +480,16 @@ body {
   }
 
   .social-bar {
-    width: 161px;
-    height: 28px;
+    width: 167px;
+    height: 34px;
     justify-content: space-between;
     margin-bottom: 45px;
     padding: 0;
   }
 
   .social-icon {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
   }
 
   .record-image {
@@ -510,7 +510,7 @@ body {
   }
 
   .helicopter-image {
-    width: 250px;
+    width: 267px;
   }
 
   .dropping-items-container {
@@ -522,16 +522,16 @@ body {
   }
 
   .item-sandwich {
-    width: 120px;
+    width: 137px;
   }
 
   .item-watergun {
-    width: 100px;
+    width: 117px;
     margin-left: -30px;
   }
 
   .item-bucket {
-    width: 80px;
+    width: 97px;
   }
 
   .item-skimask {
@@ -540,7 +540,7 @@ body {
 
   .globe-section {
     position: absolute;
-    top: 360px;
+    top: 343px;
     margin-top: 0;
     margin-bottom: 0;
     transform: none;
@@ -551,13 +551,12 @@ body {
   }
 
   .library-label {
-    width: 100px;
+    width: 120px;
   }
 
   .time-location {
     font-size: 13px;
-    letter-spacing: 0.1em;
-    margin-top: -2px;
+    letter-spacing: 0.1em
   }
 }
 
