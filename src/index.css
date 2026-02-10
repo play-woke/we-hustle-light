@@ -434,17 +434,7 @@ body {
   letter-spacing: 3px;
 }
 
-@media (orientation: landscape) and (max-width: 1400px) {
-  .landscape-blocker {
-    display: flex;
-  }
-
-  .main-container {
-    display: none;
-  }
-}
-
-/* Additional check for touch devices in landscape (covers all tablets) */
+/* Block landscape on mobile and tablet touch devices only */
 @media (orientation: landscape) and (hover: none) and (pointer: coarse) {
   .landscape-blocker {
     display: flex;
@@ -493,8 +483,9 @@ body {
   }
 
   .record-image {
-    width: 105px;
-    height: 108px;
+    width: 88px;
+    height: 91px;
+    margin-bottom: 30px;
   }
 
   .play-triangle {
@@ -540,14 +531,14 @@ body {
 
   .globe-section {
     position: absolute;
-    top: 343px;
+    top: 328px;
     margin-top: 0;
     margin-bottom: 0;
     transform: none;
   }
 
   .globe-image {
-    width: 297px;
+    width: 222px;
   }
 
   .library-label {
