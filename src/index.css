@@ -21,8 +21,8 @@ body {
   /* Prevent iOS Safari bounce/elastic scrolling */
   position: fixed;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: auto;
   overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -73,12 +73,20 @@ body {
   z-index: 20;
 }
 
+body.mac .logo-section {
+  top: 38px;
+}
+
 .logo-image {
   width: 280px;
   height: auto;
   max-width: 100%;
   display: block;
   box-sizing: border-box;
+}
+
+body.mac .logo-image {
+  width: 332px;
 }
 
 .tagline-image {
@@ -90,6 +98,15 @@ body {
   margin-top: 5px;
   position: relative;
   z-index: 20;
+}
+
+body.mac .tagline-image {
+  width: 495px;
+  margin-top: -10px;
+}
+
+body.mac .time-location {
+  font-size: 17px;
 }
 
 /* Time location display */
@@ -111,9 +128,14 @@ body {
 /* Helicopter section - behind logo */
 .helicopter-section {
   position: absolute;
-  top: calc(5vh + 120px);
+  top: calc(5vh + 145px);
   right: calc(25% + 75px);
   z-index: 15;
+}
+
+body.mac .helicopter-section {
+  top: calc(5vh + 170px);
+  right: calc(25% + 75px);
 }
 
 .helicopter-wrapper {
@@ -127,6 +149,10 @@ body {
   max-width: 100%;
   display: block;
   box-sizing: border-box;
+}
+
+body.mac .helicopter-image {
+  width: 340px;
 }
 
 /* Play button removed from helicopter - now on record in footer */
@@ -186,12 +212,17 @@ body {
 /* Dropping items - behind logo */
 .dropping-items-container {
   position: absolute;
-  top: calc(5vh + 220px);
+  top: calc(5vh + 275px);
   right: calc(25% + 75px);
   width: 400px;
   height: 120vh;
   pointer-events: none;
   z-index: 10;
+}
+
+body.mac .dropping-items-container {
+  top: calc(5vh + 330px);
+  right: calc(25% + 85px);
 }
 
 .dropping-item {
@@ -202,33 +233,32 @@ body {
   max-width: 100%;
   display: block;
   box-sizing: border-box;
+  margin-left: -32px;
 }
 
 .item-sandwich {
   width: 148px;
 }
 
+body.mac .item-sandwich {
+  width: 170px;
+}
+
 .item-watergun {
   width: 118px;
-  /* Original x was 195 vs 230 for others (center). 195 is -35px shift from 230.
-     If 230 is center (50%), then 195 is just left of center.
-     Since container is 400px wide, center is 200px.
-     Original "230" means 230px from left.
-     Center is 200px. So 230px is +30px offset?
-     Wait. 230px in 400px container is (230/400) = 57.5%.
-     195px in 400px container is (195/400) = 48.75% (approx center).
+  /* margin-left removed to align with others */
+}
 
-     Let's stick to centering all for simplicity first, or add margin.
-     The user's original code had different 'x' values.
-     Sandwich/Bucket: 230px. Watergun: 195px.
-     Use margin-left to offset.
-  */
-  margin-left: -35px;
-  /* Offset relative to others if needed */
+body.mac .item-watergun {
+  width: 140px;
 }
 
 .item-bucket {
   width: 88px;
+}
+
+body.mac .item-bucket {
+  width: 112px;
 }
 
 .item-skimask {
@@ -245,6 +275,14 @@ body {
   position: relative;
   z-index: 5;
   transform: translateY(35px);
+}
+
+body.mac .globe-section {
+  transform: translateY(-45px);
+}
+
+body.mac .globe-image {
+  width: 350px;
 }
 
 .globe-wrapper {
@@ -278,6 +316,10 @@ body {
   max-width: 100%;
   display: block;
   box-sizing: border-box;
+}
+
+body.mac .library-label {
+  width: 270px;
 }
 
 /* Static items on desktop */
@@ -332,15 +374,16 @@ body {
   align-items: center;
   justify-content: space-between;
   background: var(--text-dark);
-  padding: 0;
-  margin-bottom: 25px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 30px;
   width: 175px;
-  height: 35px;
+  height: 28px;
 }
 
 .social-icon {
-  width: 29px;
-  height: 29px;
+  width: 23px;
+  height: 23px;
   max-width: 100%;
   display: block;
   box-sizing: border-box;
@@ -358,13 +401,17 @@ body {
   transition: transform 0.3s ease;
 }
 
+body.mac .record-player {
+  margin-bottom: 20px;
+}
+
 .record-player:hover {
   transform: scale(1.05);
 }
 
 .record-image {
-  width: 131px;
-  height: 135px;
+  width: 91px;
+  height: 95px;
   max-width: 100%;
   display: block;
   box-sizing: border-box;
@@ -453,38 +500,56 @@ body {
   }
 
   .logo-section {
-    top: 61px;
+    top: 28px;
+  }
+
+  body.android .logo-section {
+    top: 55px;
   }
 
   .logo-image {
-    width: 257px;
+    width: 195px;
   }
 
   .tagline-image {
-    width: 347px;
+    width: 350px;
     margin-top: -10px;
   }
 
   .footer-container {
-    padding: 10px 15px 10px 0;
+    padding: 0px 0px 0px 0;
   }
 
   .social-bar {
     width: 167px;
     height: 34px;
     justify-content: space-between;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+
+  body.android .social-bar {
     margin-bottom: 45px;
-    padding: 0;
   }
 
   .social-icon {
-    width: 34px;
-    height: 34px;
+    width: 29px;
+    height: 29px;
   }
 
   .record-image {
     width: 88px;
     height: 91px;
+    margin-bottom: 0;
+  }
+
+  .record-player {
+    padding-right: 15px;
+  }
+
+  body.android .record-image {
     margin-bottom: 30px;
   }
 
@@ -495,34 +560,44 @@ body {
   }
 
   .helicopter-section {
-    top: 193px;
-    left: 228px;
+    top: 114px;
+    left: 200px;
     right: auto;
   }
 
+  body.android .helicopter-section {
+    top: 138px;
+    left: 196px;
+  }
+
   .helicopter-image {
-    width: 267px;
+    width: 297px;
+    max-width: none;
+  }
+
+  .dropping-item {
+    margin-left: -30px;
   }
 
   .dropping-items-container {
     top: 315px;
-    left: 180px;
+    left: 115px;
     right: auto;
     width: 280px;
     height: 350px;
   }
 
   .item-sandwich {
-    width: 137px;
+    width: 167px;
   }
 
   .item-watergun {
-    width: 117px;
-    margin-left: -30px;
+    width: 127px;
+    margin-left: 0;
   }
 
   .item-bucket {
-    width: 97px;
+    width: 107px;
   }
 
   .item-skimask {
@@ -531,23 +606,32 @@ body {
 
   .globe-section {
     position: absolute;
-    top: 328px;
+    top: 285px;
     margin-top: 0;
     margin-bottom: 0;
     transform: none;
   }
 
+  body.android .globe-section {
+    top: 315px;
+  }
+
   .globe-image {
-    width: 222px;
+    width: 227px;
   }
 
   .library-label {
-    width: 120px;
+    height: 30px;
+    width: 155px;
   }
 
   .time-location {
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.1em
+  }
+
+  body.android .time-location {
+    font-size: 13px;
   }
 }
 

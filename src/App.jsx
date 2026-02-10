@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './index.css';
 import Helicopter from './components/Helicopter';
 import DroppingItems from './components/DroppingItems';
@@ -11,6 +12,18 @@ import logoImg from './assets/images/logo.webp';
 import taglineImg from './assets/images/tagline.webp';
 
 function App() {
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isAndroid = /android/i.test(userAgent);
+    const isMac = /mac/i.test(userAgent) && !/iphone|ipad|ipod/i.test(userAgent);
+
+    if (isAndroid) {
+      document.body.classList.add('android');
+    }
+    if (isMac) {
+      document.body.classList.add('mac');
+    }
+  }, []);
   const handleLogoClick = () => {
     window.open('https://play-woke-sooty.vercel.app', '_blank');
   };

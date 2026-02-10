@@ -28,7 +28,7 @@ const DroppingItems = () => {
             rotate: [0, 0, 90, 180, 270, 360, 360],
             visibility: 'visible',
             transition: {
-                duration: 5.4,
+                duration: 4.0,
                 ease: "linear",
                 repeat: Infinity,
                 repeatDelay: 0,
