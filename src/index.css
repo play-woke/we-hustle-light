@@ -81,7 +81,7 @@ body {
 /* Logo section - fixed at top */
 .logo-section {
   position: fixed;
-  top: 2.6rem;
+  top: 1.2rem;
   /* 20px -> 2rem */
   left: 50%;
   transform: translateX(-50%);
@@ -158,7 +158,7 @@ body.mac .time-location {
 /* Helicopter section */
 .helicopter-section {
   position: absolute;
-  top: calc(5vh + 14.7rem);
+  top: calc(5vh + 13.3rem);
   /* 145px -> 14.5rem -> adjusted to 19rem */
   right: calc(25% + 15.7rem);
   /* 75px -> 7.5rem */
@@ -349,7 +349,7 @@ body.mac .globe-image {
 }
 
 .globe-image {
-  width: 30rem;
+  width: 31rem;
   /* 220px -> 22rem */
   height: auto;
   max-width: 100%;
@@ -439,9 +439,9 @@ body.mac .library-label {
   /* 20px -> 2rem */
   margin-bottom: 3.5rem;
   /* 30px -> 3rem */
-  width: 17.5rem;
+  width: 22rem;
   /* 175px -> 17.5rem */
-  height: 2.8rem;
+  height: 3rem;
   /* 28px -> 2.8rem */
 }
 
@@ -453,9 +453,9 @@ body.mac .social-bar {
 }
 
 .social-icon {
-  width: 2.3rem;
+  width: 2.9rem;
   /* 23px -> 2.3rem */
-  height: 2.3rem;
+  height: 2.9rem;
   max-width: 100%;
   display: block;
   box-sizing: border-box;
