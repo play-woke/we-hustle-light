@@ -36,12 +36,8 @@ html {
 
 @media (max-width: 768px) {
   html {
-    /* Optional: Reset to standard pixels or a different scale on mobile if needed.
-       For now, let's keep it standard or specific to ensure readability. 
-       Reverting to standard 16px basis or keeping standard px logic for mobile
-       is often safer for text legibility. 
-    */
-    font-size: 16px;
+    /* Set mobile base font size to 10px to match the rem scale used on desktop (1rem = 10px) */
+    font-size: 10px;
   }
 }
 
@@ -110,7 +106,7 @@ body.mac .logo-section {
 }
 
 body.mac .logo-image {
-  width: 33.2rem;
+  width: 39rem;
   /* 332px -> 33.2rem */
 }
 
@@ -128,14 +124,14 @@ body.mac .logo-image {
 }
 
 body.mac .tagline-image {
-  width: 49.5rem;
+  width: 57rem;
   /* 495px -> 49.5rem */
   margin-top: -1rem;
   /* -10px -> -1rem */
 }
 
 body.mac .time-location {
-  font-size: 1.7rem;
+  font-size: 1.94rem;
   /* 17px -> 1.7rem */
 }
 
@@ -170,9 +166,9 @@ body.mac .time-location {
 }
 
 body.mac .helicopter-section {
-  top: calc(5vh + 21.5rem);
+  top: calc(5vh + 19.5rem);
   /* 170px -> 17rem -> adjusted to 21.5rem */
-  right: calc(25% + 7.5rem);
+  right: calc(25% + 8.5rem);
   /* 75px -> 7.5rem */
 }
 
@@ -191,7 +187,7 @@ body.mac .helicopter-section {
 }
 
 body.mac .helicopter-image {
-  width: 34rem;
+  width: 37rem;
   /* 340px -> 34rem */
 }
 
@@ -262,9 +258,9 @@ body.mac .helicopter-image {
 }
 
 body.mac .dropping-items-container {
-  top: calc(5vh + 37.5rem);
+  top: calc(5vh + 38rem);
   /* 330px -> 33rem -> adjusted to 37.5rem */
-  right: calc(25% + 8.5rem);
+  right: calc(25% + 12rem);
   /* 85px -> 8.5rem */
 }
 
@@ -286,7 +282,7 @@ body.mac .dropping-items-container {
 }
 
 body.mac .item-sandwich {
-  width: 17rem;
+  width: 19rem;
   /* 170px -> 17rem */
 }
 
@@ -296,7 +292,7 @@ body.mac .item-sandwich {
 }
 
 body.mac .item-watergun {
-  width: 14rem;
+  width: 16rem;
   /* 140px -> 14rem */
 }
 
@@ -306,7 +302,7 @@ body.mac .item-watergun {
 }
 
 body.mac .item-bucket {
-  width: 11.2rem;
+  width: 12rem;
   /* 112px -> 11.2rem */
 }
 
@@ -331,11 +327,12 @@ body.mac .item-bucket {
 
 body.mac .globe-section {
   transform: translateY(-4.5rem);
+  margin-bottom: 10rem;
   /* -45px -> -4.5rem */
 }
 
 body.mac .globe-image {
-  width: 35rem;
+  width: 40rem;
 }
 
 .globe-wrapper {
@@ -374,7 +371,7 @@ body.mac .globe-image {
 }
 
 body.mac .library-label {
-  width: 27rem;
+  width: 30rem;
 }
 
 /* Static items on desktop */
@@ -448,6 +445,13 @@ body.mac .library-label {
   /* 28px -> 2.8rem */
 }
 
+body.mac .social-bar {
+  width: 24rem;
+  /* 175px -> 17.5rem */
+  height: 3rem;
+  /* 28px -> 2.8rem */
+}
+
 .social-icon {
   width: 2.3rem;
   /* 23px -> 2.3rem */
@@ -456,6 +460,13 @@ body.mac .library-label {
   display: block;
   box-sizing: border-box;
   transition: opacity 0.3s ease;
+}
+
+body.mac .social-icon {
+  width: 2.9rem;
+  /* 23px -> 2.3rem */
+  height: 2.9rem;
+  /* 23px -> 2.3rem */
 }
 
 .social-icon:hover {
@@ -488,6 +499,13 @@ body.mac .record-player {
   display: block;
   box-sizing: border-box;
   transition: transform 0.3s ease;
+}
+
+body.mac .record-image {
+  width: 11.5rem;
+  /* 91px -> 9.1rem */
+  height: 12rem;
+  /* 95px -> 9.5rem */
 }
 
 .record-image.spinning {
@@ -569,142 +587,148 @@ body.mac .record-player {
 /* Mobile responsive */
 @media (max-width: 768px) {
   .main-container {
-    padding: 15px;
-    padding-bottom: 100px;
+    padding: 1.5rem;
+    padding-bottom: 10rem;
   }
 
   .logo-section {
-    top: 28px;
+    top: 2.5rem;
   }
 
   body.android .logo-section {
-    top: 55px;
+    top: 3rem;
   }
 
   .logo-image {
-    width: 195px;
+    width: 23rem;
   }
 
   .tagline-image {
-    width: 350px;
-    margin-top: -10px;
+    width: 42rem;
+    margin-top: 0rem;
+  }
+
+  body.android .tagline-image {
+    width: 36rem;
   }
 
   .footer-container {
-    padding: 0px 0px 0px 0;
+    padding: 0;
   }
 
   .social-bar {
-    width: 167px;
-    height: 34px;
+    width: 16.7rem;
+    height: 3.4rem;
     justify-content: space-between;
-    margin-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-bottom: 3.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   body.android .social-bar {
-    margin-bottom: 45px;
+    margin-bottom: 4.5rem;
   }
 
   .social-icon {
-    width: 29px;
-    height: 29px;
+    width: 2.9rem;
+    height: 2.9rem;
   }
 
   .record-image {
-    width: 88px;
-    height: 91px;
+    width: 8.8rem;
+    height: 9.1rem;
     margin-bottom: 0;
   }
 
   .record-player {
-    padding-right: 15px;
+    padding-right: 1.5rem;
   }
 
   body.android .record-image {
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
   }
 
   .play-triangle {
-    border-left-width: 12px;
-    border-top-width: 8px;
-    border-bottom-width: 8px;
+    border-left-width: 1.2rem;
+    border-top-width: 0.8rem;
+    border-bottom-width: 0.8rem;
   }
 
   .helicopter-section {
-    top: 114px;
-    left: 200px;
+    top: 14.3rem;
+    left: 21rem;
     right: auto;
   }
 
   body.android .helicopter-section {
-    top: 138px;
-    left: 196px;
+    top: 14.4em;
+    left: 20.5em;
   }
 
   .helicopter-image {
-    width: 297px;
+    width: 29.7rem;
     max-width: none;
   }
 
   .dropping-item {
-    margin-left: -30px;
+    margin-left: -3rem;
   }
 
   .dropping-items-container {
-    top: 315px;
-    left: 115px;
+    top: 31.5rem;
+    left: 11.5rem;
     right: auto;
-    width: 280px;
-    height: 350px;
+    width: 28rem;
+    height: 35rem;
   }
 
   .item-sandwich {
-    width: 167px;
+    width: 16.7rem;
   }
 
   .item-watergun {
-    width: 127px;
+    width: 12.7rem;
     margin-left: 0;
   }
 
   .item-bucket {
-    width: 107px;
+    width: 10.7rem;
   }
 
   .item-skimask {
-    width: 90px;
+    width: 9rem;
   }
 
   .globe-section {
     position: absolute;
-    top: 285px;
+    top: 28.5rem;
     margin-top: 0;
     margin-bottom: 0;
     transform: none;
   }
 
   body.android .globe-section {
-    top: 315px;
+    top: 33rem;
   }
 
   .globe-image {
-    width: 227px;
+    width: 23.7rem;
   }
 
   .library-label {
-    height: 30px;
-    width: 155px;
+    height: 3rem;
+    width: 17.5rem;
   }
 
+
+
   .time-location {
-    font-size: 12px;
+    font-size: 1.5rem;
     letter-spacing: 0.1em
   }
 
   body.android .time-location {
-    font-size: 13px;
+    font-size: 1.3rem;
   }
 }
 
