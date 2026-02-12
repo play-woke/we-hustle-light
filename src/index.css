@@ -25,6 +25,26 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+/* 
+   FLUID RESPONSIVE BASE
+   Sets 1rem = 10px at 1920px viewport width.
+   Allows 1:1 scaling for all rem units.
+*/
+html {
+  font-size: calc(100vw / 192);
+}
+
+@media (max-width: 768px) {
+  html {
+    /* Optional: Reset to standard pixels or a different scale on mobile if needed.
+       For now, let's keep it standard or specific to ensure readability. 
+       Reverting to standard 16px basis or keeping standard px logic for mobile
+       is often safer for text legibility. 
+    */
+    font-size: 16px;
+  }
+}
+
 body {
   font-family: 'Arial', sans-serif;
   background-color: var(--bg-color);
@@ -53,7 +73,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 2rem;
+  /* 20px -> 2rem */
   overflow: hidden;
   /* Prevent iOS bounce scrolling */
   touch-action: none;
@@ -64,7 +85,8 @@ body {
 /* Logo section - fixed at top */
 .logo-section {
   position: fixed;
-  top: 20px;
+  top: 2.6rem;
+  /* 20px -> 2rem */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -74,11 +96,13 @@ body {
 }
 
 body.mac .logo-section {
-  top: 38px;
+  top: 3.8rem;
+  /* 38px -> 3.8rem */
 }
 
 .logo-image {
-  width: 280px;
+  width: 31rem;
+  /* 280px -> 28rem */
   height: auto;
   max-width: 100%;
   display: block;
@@ -86,56 +110,70 @@ body.mac .logo-section {
 }
 
 body.mac .logo-image {
-  width: 332px;
+  width: 33.2rem;
+  /* 332px -> 33.2rem */
 }
 
 .tagline-image {
-  width: 400px;
+  width: 45rem;
+  /* 400px -> 40rem */
   height: auto;
   max-width: 100%;
   display: block;
   box-sizing: border-box;
-  margin-top: 5px;
+  margin-top: -1rem;
+  /* 5px -> 0.5rem */
   position: relative;
   z-index: 20;
 }
 
 body.mac .tagline-image {
-  width: 495px;
-  margin-top: -10px;
+  width: 49.5rem;
+  /* 495px -> 49.5rem */
+  margin-top: -1rem;
+  /* -10px -> -1rem */
 }
 
 body.mac .time-location {
-  font-size: 17px;
+  font-size: 1.7rem;
+  /* 17px -> 1.7rem */
 }
 
 /* Time location display */
 .time-location {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 13px;
+  font-size: 1.5rem;
+  /* 13px -> 1.3rem */
   font-weight: 500;
   color: var(--text-dark);
   text-transform: uppercase;
   letter-spacing: 0.13em;
   line-height: 100%;
-  margin-top: 5px;
+  margin-top: 0.2rem;
+  /* 5px -> 0.5rem */
   text-align: center;
-  width: 400px;
+  width: 40rem;
+  /* 400px -> 40rem */
   position: relative;
   z-index: 20;
 }
 
-/* Helicopter section - behind logo */
+/* Helicopter section */
+/* Helicopter section */
 .helicopter-section {
   position: absolute;
-  top: calc(5vh + 145px);
-  right: calc(25% + 75px);
+  top: calc(5vh + 14.7rem);
+  /* 145px -> 14.5rem -> adjusted to 19rem */
+  right: calc(25% + 15.7rem);
+  /* 75px -> 7.5rem */
   z-index: 15;
 }
 
 body.mac .helicopter-section {
-  top: calc(5vh + 170px);
-  right: calc(25% + 75px);
+  top: calc(5vh + 21.5rem);
+  /* 170px -> 17rem -> adjusted to 21.5rem */
+  right: calc(25% + 7.5rem);
+  /* 75px -> 7.5rem */
 }
 
 .helicopter-wrapper {
@@ -144,7 +182,8 @@ body.mac .helicopter-section {
 }
 
 .helicopter-image {
-  width: 300px;
+  width: 31rem;
+  /* 300px -> 30rem */
   height: auto;
   max-width: 100%;
   display: block;
@@ -152,12 +191,10 @@ body.mac .helicopter-section {
 }
 
 body.mac .helicopter-image {
-  width: 340px;
+  width: 34rem;
+  /* 340px -> 34rem */
 }
 
-/* Play button removed from helicopter - now on record in footer */
-
-/* Helicopter shake animation */
 /* Helicopter jitter animation */
 @keyframes jitter {
   0% {
@@ -209,20 +246,26 @@ body.mac .helicopter-image {
   animation: jitter 0.5s infinite linear;
 }
 
-/* Dropping items - behind logo */
+/* Dropping items */
+/* Dropping items */
 .dropping-items-container {
   position: absolute;
-  top: calc(5vh + 275px);
-  right: calc(25% + 75px);
-  width: 400px;
+  top: calc(5vh + 34rem);
+  /* 275px -> 27.5rem -> adjusted to 32rem */
+  right: calc(25% + 15rem);
+  /* 75px -> 7.5rem */
+  width: 40rem;
+  /* 400px -> 40rem */
   height: 120vh;
   pointer-events: none;
   z-index: 10;
 }
 
 body.mac .dropping-items-container {
-  top: calc(5vh + 330px);
-  right: calc(25% + 85px);
+  top: calc(5vh + 37.5rem);
+  /* 330px -> 33rem -> adjusted to 37.5rem */
+  right: calc(25% + 8.5rem);
+  /* 85px -> 8.5rem */
 }
 
 .dropping-item {
@@ -233,56 +276,66 @@ body.mac .dropping-items-container {
   max-width: 100%;
   display: block;
   box-sizing: border-box;
-  margin-left: -32px;
+  margin-left: -3.2rem;
+  /* -32px -> -3.2rem */
 }
 
 .item-sandwich {
-  width: 148px;
+  width: 17.8rem;
+  /* 148px -> 14.8rem */
 }
 
 body.mac .item-sandwich {
-  width: 170px;
+  width: 17rem;
+  /* 170px -> 17rem */
 }
 
 .item-watergun {
-  width: 118px;
-  /* margin-left removed to align with others */
+  width: 13.8rem;
+  /* 118px -> 11.8rem */
 }
 
 body.mac .item-watergun {
-  width: 140px;
+  width: 14rem;
+  /* 140px -> 14rem */
 }
 
 .item-bucket {
-  width: 88px;
+  width: 11.8rem;
+  /* 88px -> 8.8rem */
 }
 
 body.mac .item-bucket {
-  width: 112px;
+  width: 11.2rem;
+  /* 112px -> 11.2rem */
 }
 
 .item-skimask {
-  width: 107px;
+  width: 10.7rem;
+  /* 107px -> 10.7rem */
 }
 
 /* Globe section */
 .globe-section {
   margin-top: auto;
-  margin-bottom: 80px;
+  margin-bottom: 14rem;
+  /* 80px -> 8rem */
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   z-index: 5;
-  transform: translateY(35px);
+  transform: translateY(3.5rem);
+  /* 35px -> 3.5rem */
 }
 
 body.mac .globe-section {
-  transform: translateY(-45px);
+  transform: translateY(-4.5rem);
+  /* -45px -> -4.5rem */
 }
 
 body.mac .globe-image {
-  width: 350px;
+  width: 35rem;
 }
 
 .globe-wrapper {
@@ -299,7 +352,8 @@ body.mac .globe-image {
 }
 
 .globe-image {
-  width: 220px;
+  width: 30rem;
+  /* 220px -> 22rem */
   height: auto;
   max-width: 100%;
   display: block;
@@ -311,7 +365,8 @@ body.mac .globe-image {
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 160px;
+  width: 23rem;
+  /* 160px -> 16rem */
   height: auto;
   max-width: 100%;
   display: block;
@@ -319,7 +374,7 @@ body.mac .globe-image {
 }
 
 body.mac .library-label {
-  width: 270px;
+  width: 27rem;
 }
 
 /* Static items on desktop */
@@ -338,21 +393,27 @@ body.mac .library-label {
 }
 
 .bucket-static {
-  top: 150px;
+  top: 15rem;
+  /* 150px -> 15rem */
   right: 5%;
-  width: 100px;
+  width: 10rem;
+  /* 100px -> 10rem */
 }
 
 .watergun-static {
-  top: 280px;
+  top: 28rem;
+  /* 280px -> 28rem */
   right: 2%;
-  width: 120px;
+  width: 12rem;
+  /* 120px -> 12rem */
 }
 
 .sandwich-static {
-  bottom: 200px;
+  bottom: 20rem;
+  /* 200px -> 20rem */
   right: 8%;
-  width: 100px;
+  width: 10rem;
+  /* 100px -> 10rem */
 }
 
 /* Footer container */
@@ -362,7 +423,8 @@ body.mac .library-label {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 15px 25px 15px 0;
+  padding: 1.5rem 2.5rem 1.5rem 0;
+  /* 15px 25px -> 1.5rem 2.5rem */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -374,16 +436,22 @@ body.mac .library-label {
   align-items: center;
   justify-content: space-between;
   background: var(--text-dark);
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-bottom: 30px;
-  width: 175px;
-  height: 28px;
+  padding-right: 2rem;
+  /* 20px -> 2rem */
+  padding-left: 2rem;
+  /* 20px -> 2rem */
+  margin-bottom: 3.5rem;
+  /* 30px -> 3rem */
+  width: 17.5rem;
+  /* 175px -> 17.5rem */
+  height: 2.8rem;
+  /* 28px -> 2.8rem */
 }
 
 .social-icon {
-  width: 23px;
-  height: 23px;
+  width: 2.3rem;
+  /* 23px -> 2.3rem */
+  height: 2.3rem;
   max-width: 100%;
   display: block;
   box-sizing: border-box;
@@ -399,10 +467,12 @@ body.mac .library-label {
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease;
+  margin-bottom: 1.5rem;
+
 }
 
 body.mac .record-player {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .record-player:hover {
@@ -410,8 +480,10 @@ body.mac .record-player {
 }
 
 .record-image {
-  width: 91px;
-  height: 95px;
+  width: 10.1rem;
+  /* 91px -> 9.1rem */
+  height: 10.5rem;
+  /* 95px -> 9.5rem */
   max-width: 100%;
   display: block;
   box-sizing: border-box;
@@ -439,9 +511,11 @@ body.mac .record-player {
   transform: translate(-40%, -50%);
   width: 0;
   height: 0;
-  border-left: 16px solid var(--text-light);
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-left: 1.6rem solid var(--text-light);
+  /* 16px -> 1.6rem */
+  border-top: 1rem solid transparent;
+  /* 10px -> 1.0rem */
+  border-bottom: 1rem solid transparent;
   pointer-events: none;
 }
 
@@ -463,22 +537,22 @@ body.mac .record-player {
   justify-content: center;
   z-index: 9999;
   text-align: center;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .landscape-blocker h1 {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   color: var(--text-dark);
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .landscape-blocker h2 {
-  font-size: 32px;
+  font-size: 3.2rem;
   font-weight: 900;
   color: var(--text-dark);
-  letter-spacing: 3px;
+  letter-spacing: 0.3rem;
 }
 
 /* Block landscape on mobile and tablet touch devices only */
@@ -527,7 +601,6 @@ body.mac .record-player {
     margin-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
-
   }
 
   body.android .social-bar {
